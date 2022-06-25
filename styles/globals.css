@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  body {
+    @apply bg-zinc-900 h-screen w-auto text-white font-sans
+  }
+
+  main {
+    @apply relative w-auto max-w-full
+  }
+
+  /* Landing page elements */
+  .landing {
+    @apply relative w-auto h-screen
+  }
+
+  .logo {
+    @apply absolute select-none m-auto top-20 bottom-0 left-0 right-0 w-1/3 drop-shadow-[0_15px_15px_rgba(0,0,0,1.0)] 
+  }
+
+  #tsparticles {
+    @apply absolute top-0 right-0 left-0 bottom-0 
+  }
+
+  /* Socials */
+
+  .socials {
+    @apply fixed left-12 pl-1 top-1/4 z-50
+  }
+
+  .socials .iconStack {
+    @apply flex flex-col justify-center items-center
+  }
+
+  .socials .icon {
+    @apply text-[#a9a9a9] py-2
+  }
+
+  .socials .icon:hover {
+    @apply scale-125 transition-all ease-in-out duration-300 text-white
+  }
+
+  .socials .connector {
+    @apply w-[2px] h-12 bg-[#a9a9a9]
+  }
+
+  /* MOTD */
+
+  .motd {
+    @apply absolute select-none w-full h-fit m-auto top-0 bottom-0 left-0 right-0 z-20 p-5 overflow-hidden
+  }
+
+  .motd p{
+    @apply text-3xl font-light w-fit py-3 m-auto tracking-wide drop-shadow-[0px_0px_5px_rgba(0,0,0,1)]
+  }
+
+  .motd b{
+    @apply font-bold text-5xl text-[#1e79e1] 
+    
+    tracking-wider text-shadow-lg
+  }
+
+  .motd .topline{
+      @apply text-left -translate-x-full opacity-0
+  }
+
+  .motd .bottomline{
+      @apply text-right translate-x-full opacity-0 ml-0
+  }
+
+  /* MOTD Loaded */
+
+  .motd .toplineL{
+    @apply text-left pr-10
+  }
+
+  .motd .bottomlineL{
+    @apply text-right pl-20
+  }
+
+  .motd .bottomlineL, .motd .toplineL{
+    @apply transition-all delay-[4500ms] duration-[1500ms] opacity-100
+  }
+
+
+
+  /* Typewriter */
+
+  .typer {
+    @apply 
+    
+    absolute w-fit m-auto left-0 right-0 top-1/4 pl-10
+
+    select-none text-7xl text-center font-semibold font-mono drop-shadow-[1px_1px_3px_rgba(255,255,255,0.3)]
+  
+  }
+
+
+  /* Footer */
+
+  .footer {
+    @apply flex w-full bottom-0 max-h-fit justify-between bg-neutral-900
+  }
+
+  .footer .copyright{
+    @apply m-auto text-gray-500 py-2
+  }
+
+
+
+
+  /* Mobile modifications */
+
+  @media screen and (max-width:1300px) {
+
+
+      .logo {
+        @apply w-1/2 
+      }
+
+      .typer {
+        @apply text-[4rem]
+      }
+
+
+  }
+
+
+  @media screen and (max-width:940px) {
+
+
+    .motd p{
+      @apply text-2xl
+    }
+
+    .motd b{
+      @apply text-4xl
+    }
+
+    .logo {
+      @apply w-2/3
+    }
+
+    .socials{
+      @apply absolute flex w-full z-20 m-auto p-0 left-0 top-[42rem] items-center justify-center
+    }
+
+    .socials .iconStack {
+      @apply flex-row flex-wrap
+
+    }
+
+    .socials .icon {
+      @apply py-0 px-2
+    }
+
+    .socials .connector {
+      @apply w-12 h-[2px]
+    }
+
+  }
+
+
+  @media screen and (max-width:550px) {
+
+      .motd p{
+        @apply text-xl py-0
+      }
+
+      .motd .topline{
+        @apply pt-10
+      }    
+
+      .motd .toplineL{
+        @apply pt-10
+      }    
+
+      .motd b{
+        @apply text-3xl
+      }
+
+      .typer {
+        @apply text-[3.5rem] p-0
+      }
+
+      .logo {
+        @apply w-full
+      }
+
+      .socials {
+        @apply hidden
+      }
+  }
+
+
+  @layer utilities {
+    @variants responsive {
+        .text-shadow {
+          text-shadow: 2px 2px 4px black;
+        }
+        .text-shadow-md {
+          text-shadow: 4px 4px 8px black;
+        }
+        .text-shadow-lg {
+          text-shadow: 8px 8px 15px black;
+        }
+        .text-shadow-none {
+          text-shadow: none;
+        }
+    } 
+}
+
+
+}
+
+
+

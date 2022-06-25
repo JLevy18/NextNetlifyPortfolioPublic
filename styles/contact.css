@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    
+    #contact {
+        @apply flex h-screen z-10 pl-24 overflow-clip bg-zinc-900 shadow-[inset_0px_0px_15px_5px_rgba(0,0,0,0.8)]
+    }
+
+    /* FORM INFO STLYES */
+
+    #contact .infoWrap{
+        @apply h-full w-[45%] flex items-center justify-center
+    
+    }
+    
+    #contact .infoWrap .content {
+        @apply flex flex-col h-1/2 items-start justify-center mx-10
+    }
+
+    #contact .infoWrap b{
+        @apply text-6xl text-[#1e79e1] text-shadow-md pb-4
+    }
+
+    #contact .infoWrap p{
+        @apply text-xl text-zinc-300 text-shadow-md pb-2
+    }
+
+    /* FORM STLYES */
+
+    #contact .formWrap{
+        @apply w-[55%] h-full bg-zinc-900 ml-auto boxshadow flex flex-col items-center justify-center
+    }
+
+    #contact .formWrap .content {
+        @apply w-full flex justify-center
+    }
+
+    #contact .formWrap .content form {
+        @apply w-2/3
+    }
+
+    /* 
+    *
+    *   FORM RESPONSE STLYES
+    *
+    */
+
+    /* Container Postition */
+    #contact #response{
+        @apply fixed bottom-0 left-0 z-[999] h-[8%] w-full
+
+        transition-all duration-500
+    } 
+
+    /* Container Response Specific */
+    #contact #response.default{
+        @apply translate-y-32
+    }
+
+    #contact #response.success{
+        @apply bg-green-600 
+    }
+
+    #contact #response.warning{
+        @apply bg-yellow-600 
+    }
+
+    #contact #response.error{
+        @apply bg-red-600 
+    }
+
+
+    /* Response Content */
+    #contact #response .success, #contact #response .warning, #contact #response .error{
+        @apply hidden 
+    }
+
+    #contact #response .success.active, #contact #response .warning.active, #contact #response .error.active{
+        @apply flex min-h-full justify-center items-center
+    }
+   
+
+    @media screen and (max-width:1500px) {
+
+        #contact .infoWrap b{
+            @apply text-5xl
+        }
+    
+        #contact .infoWrap p{
+            @apply text-lg
+        }
+
+
+    }
+
+    @media screen and (max-width:1300px) {
+
+        #contact .infoWrap b{
+            @apply text-4xl
+        }
+    
+        #contact .infoWrap p{
+            @apply text-base
+        }
+
+        #contact .formWrap .content form {
+            @apply w-3/4
+        }
+
+    }
+
+    @media screen and (max-width:940px) {
+
+        #contact {
+            @apply flex-col px-4
+        }
+
+        #contact .infoWrap{
+            @apply w-full h-fit pt-16
+        }
+
+        #contact .formWrap{
+            @apply w-full shadow-none bg-transparent justify-start pt-8
+        }
+
+        #contact .formWrap .content form{
+            @apply w-full px-1
+        }
+
+    }
+
+    @media screen and (max-width:550px) {
+        #contact{
+            @apply h-fit
+        }
+
+    }
+
+
+    @layer utilities {
+        @variants responsive {
+            .text-shadow {
+              text-shadow: 1px 2px 5px black;
+            }
+            .text-shadow-md {
+              text-shadow: 4px 4px 10px black;
+            }
+            .text-shadow-lg {
+              text-shadow: 8px 8px 15px black;
+            }
+            .text-shadow-none {
+              text-shadow: none;
+            }
+
+            .boxshadow{
+              -webkit-box-shadow:inset 15px 0 25px 1px rgba(0,0,0,.6);
+              box-shadow:inset 15px 0 25px 1px rgba(0,0,0,.6);
+            }
+
+        } 
+    } 
+}

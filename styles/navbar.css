@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+
+    .navWrap {
+        @apply fixed select-none h-20 w-full top-0 left-0 right-0 overflow-hidden z-50 bg-transparent
+    }
+    .navWrap.active {
+        @apply transition ease-in-out duration-300 shadow-[0px_5px_20px_5px_rgba(0,0,0,1.0)]
+    }
+
+    .navbar {
+        @apply flex justify-between items-center min-w-full max-w-[1240px] h-full p-4
+    }
+
+    .navbar.active {
+        @apply transition ease-in-out duration-300 bg-gray-900 
+    }
+
+    .navLogo {
+        @apply w-14 ml-8 mt-2
+    }
+
+    .navLogo:hover {
+        @apply cursor-pointer drop-shadow-[0_0px_8px_rgba(0,0,0,1.0)] transition ease-in-out duration-300 scale-110
+    }
+
+    .nav-menu {
+        @apply flex mr-8
+    }
+
+    .nav-item a{
+        @apply px-8 py-4 font-thin text-xl tracking-widest drop-shadow-[0px_0px_1px_rgba(255,255,255,0.9)]
+    }
+
+    .nav-item .active{
+        @apply text-[#1e79e1] font-medium drop-shadow-[0px_0px_1px_rgba(30,120,220,0.9)]
+    }
+
+    .nav-item:hover{
+        @apply cursor-pointer transition ease-in-out duration-500 scale-125
+    }
+
+    .hamburger {
+        @apply hidden
+    }
+
+    @media screen and (max-width:800px) {
+
+        .navbar {
+            @apply fixed h-fit bg-gray-900 shadow-[0px_-20px_25px_25px_rgba(0,0,0,1.0)]
+        }
+
+        .navLogo {
+            @apply w-12 ml-5 mt-2 mb-auto
+        }
+
+        .hamburger {
+            @apply block mr-5 mt-4 mb-auto
+        }
+
+        .nav-menu {
+            @apply flex-col m-0 text-center -mt-96 transition-all duration-500
+        }
+
+        .nav-menu.active {
+            @apply flex mt-10  transition-all duration-500
+        }
+
+        .nav-item{
+            @apply my-4
+        }
+
+
+    }
+
+
+
+}

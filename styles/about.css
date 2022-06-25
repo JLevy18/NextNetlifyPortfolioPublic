@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    
+    #about {
+        @apply h-screen select-none flex z-20 px-28 bg-neutral-900 shadow-[0px_2px_50px_8px_rgba(0,0,0,0.8)]
+    }
+
+    #about .card{
+        @apply w-2/5 h-2/3 p-5 m-auto flex flex-col bg-neutral-800 shadow-[0px_0px_30px_5px_rgba(0,0,0,0.8)]
+    }
+
+    #about .card .title h1{
+        @apply flex items-center justify-center
+
+        text-4xl text-zinc-100 tracking-wide font-mono drop-shadow-[0px_0px_1px_rgba(255,255,255,1)]
+    }
+
+    #about .card .title {
+        @apply h-1/5 flex items-center justify-center
+    }
+
+    #about .card .content{
+        @apply h-4/5 flex items-start justify-center py-4 px-8
+
+        text-zinc-200 text-[2rem] text-center text-shadow-md
+    }
+
+
+    @media screen and (max-width:1700px) {
+
+        #about .card .content p {
+
+            @apply text-[1.75rem]
+        }
+
+        #about .card .title {
+            @apply h-1/6
+        }
+
+    }
+
+
+    @media screen and (max-width:1450px) {
+
+        #about .card .content p {
+
+            @apply text-[1.5rem]
+        }
+
+    }
+
+    @media screen and (max-width:1300px) {
+
+        #about {
+            @apply flex-col
+        }
+
+        #about .card{
+            @apply h-2/5 w-[89%] 
+        }
+
+    }
+
+    @media screen and (max-width:940px) {
+
+        #about {
+            @apply p-4
+        }
+
+        #about .card{
+            @apply w-full
+        }
+
+        #about .card .content p {
+
+            @apply text-[1.35rem]
+        }
+
+    }
+
+    @media screen and (max-width:550px) {
+
+        #about{
+            @apply h-fit
+        }
+        
+        #about .card {
+            @apply my-4
+        }
+
+        #about .card .content {
+            @apply overflow-scroll
+        }
+
+        #about .card .title h1 {
+            @apply text-3xl
+        }
+
+        #about .card .content p {
+
+            @apply text-[1rem]
+        }
+
+    }
+
+
+
+    @layer utilities {
+        @variants responsive {
+            .text-shadow {
+              text-shadow: 1px 1px 2px black;
+            }
+            .text-shadow-md {
+              text-shadow: 4px 4px 15px black;
+            }
+            .text-shadow-lg {
+              text-shadow: 8px 8px 15px black;
+            }
+            .text-shadow-none {
+              text-shadow: none;
+            }
+        } 
+    }    
+    
+ 
+}

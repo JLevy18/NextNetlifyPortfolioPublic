@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    
+    #skills {
+        @apply flex h-screen select-none z-10 px-28 bg-zinc-900 shadow-[inset_0px_0px_15px_5px_rgba(0,0,0,0.8)]
+    }
+    
+    /* Quote Section */
+
+    #skills .skillBrief {
+        @apply flex h-full w-1/2 justify-center items-center
+    }
+
+    #skills .card {
+        @apply flex flex-col items-center
+        
+        bg-zinc-800 w-4/5 h-2/3 shadow-[0px_0px_30px_5px_rgba(0,0,0,0.8)] p-4
+    }
+
+    #skills .card .title {
+        @apply h-1/6 flex items-center justify-center
+    }
+
+    #skills .card .title h1 {
+        @apply flex justify-center text-center items-center
+
+        text-4xl text-zinc-100 tracking-wide font-mono drop-shadow-[0px_0px_1px_rgba(255,255,255,1)]
+    }
+
+    #skills .card .quote {
+        @apply h-fit text-zinc-400 text-center font-extralight text-lg p-2
+    }
+
+    #skills .card .content {
+        @apply h-1/2 px-5  flex items-center m-auto
+    }
+
+    #skills .card .content p {
+
+        @apply text-justify text-[2rem] text-zinc-200 text-shadow
+    }
+
+    #skills .card .content b {
+
+        @apply text-[#1e79e1] text-shadow-md text-[2.5rem]
+    } 
+
+
+    /* SkillsGrid Section */
+    
+    #skills .skillSec {
+        @apply flex h-full w-1/2 justify-center items-center 
+    }
+
+    #skills .skillGrid {
+        @apply flex flex-wrap
+    }  
+
+    #skills .iconWrapper {
+        @apply basis-1/4 flex flex-col my-10 
+    }
+
+    #skills .iconWrapper p {
+        @apply text-center text-zinc-200 text-2xl mt-5 tracking-[.2rem]
+    }
+
+    #skills .icon {
+        @apply w-24 h-24 m-auto
+    }
+
+
+    @media screen and (max-width:1700px) {
+
+        #skills .card .content p {
+
+            @apply text-3xl
+        }
+    
+        #skills .card .content b {
+    
+            @apply text-[2rem]
+        } 
+
+    }
+
+
+    @media screen and (max-width:1300px) {
+
+        #skills {
+            @apply flex-col px-4
+        }
+
+        #skills .skillBrief {
+            @apply w-full items-end
+        }
+
+        #skills .skillSec {
+            @apply w-full
+        }
+
+        #skills .card {
+            @apply w-3/4 h-4/5
+        }
+
+        #skills .card .content p {
+
+            @apply text-2xl text-justify
+        }
+    
+        #skills .card .content b {
+    
+            @apply text-3xl
+        } 
+
+  
+  
+    }
+
+    @media screen and (max-width:940px) {
+        #skills .card {
+            @apply w-full
+        }
+        
+        #skills .card .quote {
+            @apply hidden
+        }
+
+    }
+
+
+    @media screen and (max-width:600px) {
+        #skills {
+            @apply p-4
+        }
+
+        #skills .icon {
+            @apply w-14 h-14
+        }
+
+        #skills .iconWrapper p {
+            @apply text-base mt-5 tracking-widest
+        }
+
+        #skills .iconWrapper #js{
+            @apply text-[.9rem]
+        }
+        
+
+        #skills .card .content {
+            @apply overflow-scroll h-full px-0
+        }
+
+        #skills .card .title h1 {
+
+            @apply text-2xl
+
+        }
+
+        #skills .card .content p {
+
+            @apply text-[1rem] text-center 
+        }
+    
+        #skills .card .content b {
+    
+            @apply text-lg
+        } 
+
+  
+    }
+
+    @media screen and (max-width:350px) {
+
+        #skills{
+            @apply h-fit
+        }
+
+        #skills .iconWrapper {
+            @apply basis-1/3
+        }
+    }
+
+    @layer utilities {
+        @variants responsive {
+            .text-shadow {
+              text-shadow: 2px 2px 5px black;
+            }
+            .text-shadow-md {
+              text-shadow: 4px 4px 15px black;
+            }
+            .text-shadow-lg {
+              text-shadow: 8px 8px 15px black;
+            }
+            .text-shadow-none {
+              text-shadow: none;
+            }
+        } 
+    }    
+  
+
+
+}

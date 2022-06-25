@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    
+    #projects {
+        @apply h-screen z-20 bg-neutral-900 px-32 select-none 
+    }
+
+
+    /* Grid */
+
+    #projects .pGrid{
+        @apply h-full w-full py-16 grid grid-cols-2 gap-10 container m-auto place-items-center
+    }
+
+    #projects .gridCard{
+        @apply flex flex-col p-2 h-4/5 w-full
+        
+        bg-neutral-800 shadow-[0px_0px_15px_1px_rgba(0,0,0,0.8)]
+    }
+
+
+    /* Thumbnail */
+
+    #projects .gridCard .thumbnail{
+        @apply h-2/5 w-full relative
+
+        shadow-[0px_0px_5px_2px_rgba(0,0,0,0.5)]
+    }
+
+    #projects .gridCard .thumbnail h1{
+        @apply relative z-10 flex items-center justify-center h-full whitespace-nowrap overflow-clip
+
+        text-5xl text-zinc-100 tracking-wide font-mono font-bold text-shadow-md
+    }
+
+    #projects #rlgl .thumbnail h1{
+        @apply text-4xl
+    }
+
+
+    /* Description */
+
+    #projects .gridCard .desc{
+        @apply h-fit w-full p-2 my-auto
+    }
+
+    #projects .gridCard .desc h1{
+        @apply text-center underline tracking-wider text-lg
+    }
+
+    #projects .gridCard .desc p{
+        @apply text-center text-zinc-200
+    }
+
+
+    /* Tools */
+    #projects .gridCard .tools{
+        @apply my-auto
+    }
+
+    #projects .gridCard .tools h1{
+        @apply text-center underline tracking-wider text-lg
+    }
+
+    #projects .gridCard .tools .items{
+        @apply flex justify-between px-16 pt-1 text-zinc-200
+    }
+
+
+    /* Links */
+
+    #projects .gridCard .links{
+        @apply h-fit w-full flex justify-center py-2 items-center mt-auto
+    }
+
+    #projects .gridCard .links .site:hover{
+        @apply cursor-pointer drop-shadow-[0px_0px_2px_rgba(255,255,255,1)]
+    }
+
+    #projects .gridCard .links button{
+        @apply px-8
+    }
+    #projects .gridCard .links a{
+        @apply px-8
+    }
+
+    #projects .gridCard .links button:hover{
+        @apply drop-shadow-[0px_0px_2px_rgba(255,255,255,1)]
+    }
+
+
+
+    @media screen and (max-width:1300px) {
+
+        #projects{
+            @apply min-h-fit h-fit
+        }
+
+        #projects .pGrid {
+            @apply grid-cols-1 gap-5 place-items-center
+        }
+
+        #projects .gridCard {
+            @apply w-full h-[50vh]
+        }  
+
+        #projects .gridCard .thumbnail h1{
+            @apply text-3xl 
+        }
+
+        #projects .gridCard .desc h1{
+            @apply text-base
+        }
+
+        #projects .gridCard .desc p{
+            @apply text-sm
+        }
+
+        #projects .gridCard .tools h1{
+            @apply text-base
+        }
+
+        #projects .gridCard .tools p{
+            @apply text-sm
+        }
+        
+        #projects #rlgl .thumbnail h1{
+            @apply text-2xl
+        }
+
+    }
+
+    @media screen and (max-width:940px) {
+        #projects{
+            @apply p-0 min-h-fit h-fit
+        }
+
+        #projects .pGrid {
+            @apply grid-cols-1 min-w-full m-auto px-4 
+        }
+
+
+    }
+
+    
+    @media screen and (max-width:550px) {
+        #projects .gridCard .tools .items{
+            @apply flex-col justify-center items-center
+        } 
+
+        #projects .gridCard .tools .items p{
+            @apply py-1
+        }
+        
+        #projects .gridCard#rlgl .thumbnail h1{
+            @apply text-xl
+        }
+    }
+
+
+
+    @layer utilities {
+        @variants responsive {
+            .text-shadow {
+              text-shadow: 1px 1px 2px black;
+            }
+            .text-shadow-md {
+              text-shadow: 4px 4px 10px black;
+            }
+            .text-shadow-lg {
+              text-shadow: 8px 8px 15px black;
+            }
+            .text-shadow-none {
+              text-shadow: none;
+            }
+        } 
+    }  
+
+    
+}
